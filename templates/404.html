@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<style>
+    .agency_banner_btn {
+        margin: 0 auto;
+        background: #d62828 !important;
+        border: 1px solid #d62828 !important;
+    }
+
+    .agency_banner_btn:hover {
+        color: white !important;
+    }
+</style>
+
+{% extends 'base.html' %}
+{% block body %}
+
+<section class="error_area">
+            <!-- <img class="error_shap" src="img/breadcrumb/banner_bg.png" alt=""> -->
+            <div class="container flex">
+                <div class="error_contain text-center">
+                    <div class="b_text">
+                        <h1 class="f_p w_color f_700">404</h1>
+                    </div>
+                    <h2 class="f_p f_400 w_color f_size_40">page not found</h2>
+                    <p class="w_color f_400">We’re sorry, the page you have requested for does not exist.</p>
+                    <!-- <a href="#" class="about_btn btn_hover mt_40">Go Back to home Page</a> -->
+                    <div class="btn_info d-flex">
+                        <a href="/" class="btn_hover agency_banner_btn">Go Back to home Page</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock body %}

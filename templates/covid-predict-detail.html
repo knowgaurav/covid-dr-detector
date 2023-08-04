@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<style>
+    .agency_banner_btn {
+        background: #bb371a !important;
+        border: 1px solid #bb371a !important;
+    }
+
+    .agency_banner_btn:hover {
+        color: white !important;
+    }
+</style>
+
+{% extends 'base.html' %}
+{% block body %}
+
+<section class="breadcrumb_area">
+    <img class="breadcrumb_shap" src="static/img/breadcrumb/banner_bg.png" alt="">
+    <div class="container">
+        <div class="breadcrumb_content text-center">
+            <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Project Details</h1>
+            <p class="f_400 w_color f_size_16 l_height26">COVID-19 Detection
+                from Chest X-Ray using Deep Learning</p>
+        </div>
+    </div>
+</section>
+<section class="case_study_details_area sec_pad">
+    <div class="container">
+        <div class="study_details">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="details_img">
+                        <img src="static/img/details/covid-detail-img.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="details_info">
+                        <h2>Info</h2>
+                        <ul class="list-unstyled">
+                            <li><span>Technologies used:</span> Python, Tensorflow, Keras</li>
+                            <li><span>Developed by:</span> Gaurav Singh, A2305319064,<br> B.Tech 4IT-2X, Amity Noida
+                            </li>
+                        </ul>
+                        <div class="btn_info d-flex">
+                            <a href="/detect-covid" class="btn_hover agency_banner_btn">Detect COVID-19</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="study_details_content">
+                <h2>Project Brief:</h2>
+                <p>COVID-19 is an acronym for coronavirus disease 2019 or SARS-coronavirus-2 which was first discovered
+                    in December 2019 in Wuhan, China. Since then, it has been rapidly spreading all over the world and
+                    infecting not only humans but other animals too with ACE2 receptors in their lungs. Even though the
+                    fatality rate of COVID-19 is lower than previous coronavirus diseases like MERS or SARS, the
+                    transmissibility rate is far higher. This makes early detection and diagnosis of COVID-19 crucial to
+                    limit the spread from infected people. It also helps in the treatment and management of infected
+                    individuals. Developing countries with much of their population living in villages like India and
+                    Brazil have been affected far greater than developed countries with adequate healthcare
+                    infrastructure for diagnosis and treatment.
+                </p>
+                <p>To tackle this problem, and to assist in the detection and diagnosis of COVID-19 in the underserved
+                    parts of the world, we have come up with an image classification model using deep learning which can
+                    detect COVID-19 from the Chest X-Ray scans with reasonably high accuracy (>95%). This model when
+                    deployed in areas where healthcare infrastructure is not up to the mark and testing is in limited
+                    numbers, can help to make X-Ray scans another alternative in the fight against COVID-19. </p>
+                <br>
+                <h2>Project Code:</h2>
+
+                <iframe src="https://jovian.ai/embed?url=https://jovian.ai/risewithgaurav/covid19-detection-model/v/1"
+                    title="Jovian Viewer" height="1500" width="100%" style="margin: 0 auto; max-width: 1200px;"
+                    frameborder="0" scrolling="auto"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}

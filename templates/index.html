@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<style>
+    .service_details ul {
+        padding-left: 0px !important;
+    }
+
+    .mb_50 {
+        margin-bottom: 20px !important;
+    }
+</style>
+
+{% extends 'base.html' %}
+{% block body %}
+
+<section class="hosting_banner_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-7 d-flex align-items-center">
+                <div class="hosting_content">
+                    <h2 class="wow fadeInUp" data-wow-delay="0.3s">AI & Deep Learning Modern Solutions for Healthcare
+                        Industry</h2>
+                    <p class="wow fadeInUp" data-wow-delay="0.5s">In this NTCC Project, we demonstrate how AI & Deep
+                        Learning are going to revolutionize medical diagnostics for future generations.</p>
+                    <a href="#about" class="hosting_btn btn_hover wow fadeInUp" data-wow-delay="0.7s">Get Started</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-5">
+                <!-- <img class="img-fluid wow fadeInRight" data-wow-delay="0.7s" src="static/img/hosting/hosting-image.png" -->
+                <!-- alt=""> -->
+                <!-- <img class="img-fluid wow fadeInRight" data-wow-delay="0.7s" src="static/img/home5/banner_img.png" -->
+                <img class="img-fluid wow fadeInRight" data-wow-delay="0.7s" src="static/img/banner-img-home.png" />
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="app_featured_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="service_details_img">
+                    <img src="static/img/home-img-2.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="service_details">
+                    <h2 class="f_p f_600 f_size_30 t_color3 l_height40 mb-30">Recent times have revealed that there is
+                        an urgent need to upgrade the healthcare infrastructure to prevent, diagnose & treat diseases.
+                    </h2>
+                    <p class="f_400 mb_50">Advancement in artificial intelligence and various studies from the field
+                        have proven that AI and its technologies can help us to build a modern healthcare infrastructure
+                        that can sustain & tackle the growing challenges of the modern human lifestyle. Use cases:
+                    </p>
+                    <ul class="list-unstyled mb-30">
+                        <li><i class="ti-arrow-circle-right"></i>Disease Prediction</li>
+                        <li><i class="ti-arrow-circle-right"></i>Drug Manufacturing</li>
+                        <li><i class="ti-arrow-circle-right"></i>Treatment Decision</li>
+                        <li><i class="ti-arrow-circle-right"></i>Surgery Assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <br><br><br><br><br><br> -->
+
+    <!-- </section> -->
+    <br><br><br><br>
+    <!-- <section class="analytices_customers_logo_area"> -->
+    <!-- </section> -->
+    <!-- <br><br><br><br><br><br> -->
+    <!-- <section class="h_blog_area sec_pad"> -->
+    <div class="container">
+        <div class="hosting_title text-center">
+            <h2>Our Research</h2>
+            <p>For our NTCC 2021 project, we have made two convolution neural networks using TensorFlow and Keras to
+                detect COVID-19 and Diabetic Retinopathy. Please have a look.</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="h_blog_item">
+                    <img src="static/img/blog/covid-blog-home.jpg" alt="">
+                    <div class="h_blog_content">
+                        <a href="#" class="post_time"><i class="fas fa-hashtag"></i>Python, Keras, CNN</a>
+                        <a href="/covid-predict-detail">
+                            <h3>COVID-19 Detection from Chest X-Ray using Deep Learning</h3>
+                        </a>
+                        <div class="post-info-bottom">
+                            <a href="/covid-predict-detail" class="learn_btn_two">Read More <i
+                                    class="arrow_right"></i></a>
+                            <a class="post-info-comments" href="#">
+                                <i class="icon_comment_alt" aria-hidden="true"></i>
+                                <span>By Gaurav</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="h_blog_item">
+                    <img src="static/img/blog/dr-blog-home.jpg" alt="">
+                    <div class="h_blog_content">
+                        <a href="#" class="post_time"><i class="fas fa-hashtag"></i>Python, Keras, CNN</a>
+                        <a href="/dr-predict-detail">
+                            <h3>Diabetic Retinopathy Detection from Retinal Fundus Images</h3>
+                        </a>
+                        <div class="post-info-bottom">
+                            <a href="/dr-predict-detail" class="learn_btn_two">Read More <i class="arrow_right"></i></a>
+                            <a class="post-info-comments" href="#">
+                                <i class="icon_comment_alt" aria-hidden="true"></i>
+                                <span>By Pratham</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<style>
+    #heading {
+        color: white !important;
+    }
+
+    input[type=file]::file-selector-button {
+        display: none;
+    }
+
+    .btn-primary,
+    .btn-primary:hover,
+    .btn-primary:active,
+    .btn-primary:visited {
+        background-color: #020230 !important;
+        border-color: #020230 !important;
+    }
+
+    .banner_top {
+        padding-top: 110px !important;
+        padding-bottom: 110px;
+    }
+
+    .border {
+        /* border-width: 25px;
+        border-color: red;
+        border-style: solid; */
+        width: 350px;
+        height: 350px;
+        border: 30px solid;
+        border-image: repeating-linear-gradient(45deg, #f33, #3bf, #f33 30px) 60;
+        padding: 20px;
+    }
+</style>
+{% extends 'base.html' %}
+{% block body %}
+<section class="breadcrumb_area"
+    style="background-image: url('static/img/detect-banner.jpg');background-position:  center center; background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="breadcrumb_content text-center">
+            <h2 id="heading" class="f_p f_size_40 l_height60 wow fadeInUp" data-wow-delay="0.3s"><span
+                    class="f_700">Diabetic Retinopathy</span>
+                Detection <br>from <span class="f_700">Retinal Fundus Images</span> using Deep Learning</h2>
+            <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">Disclaimer: This tool is for
+                educational
+                purposes only. It is not meant for diagnostics, and professional medical attention is highly advised if
+                you are experiencing any diabetes related symptoms.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="banner_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                </div>
+                <form class='col-8  form-horizontal' action="/predict-dr" method="post" enctype="multipart/form-data">
+
+                    <div class="form_group">
+                        <h5 class="col-8 h_title mt-5">Upload Fundus Images: </h5>
+                        <!-- <label for="pwd" class="control-label col-sm-4">Upload Your Image: </label> -->
+                        <div class="col-sm-10">
+                            <input type="file" name="dr_img" id="pwd" placeholder="Image" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="col-sm-offset-2 col-sm-10 pt-2">
+                            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                        </div>
+                    </div>
+
+                    {% if prediction %}
+                    {% if prediction == 'No DR'%}
+                    <div class="container">
+                        <h5 class="h_title mt-5">Prediction: </h5>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="alert success">
+                                    <div class="alert_body">
+                                        <i class="fas fa-thumbs-up"></i>
+                                        No DR Detected.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% elif prediction != 'No DR' %}
+                    <div class="container">
+                        <h5 class="h_title mt-5">Prediction: </h5>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="alert error">
+                                    <div class="alert_body">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        {{prediction}}!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% else %}
+                    <div class="container">
+                        <h5 class="h_title mt-5">Prediction: </h5>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="alert info">
+                                    <div class="alert_body">
+                                        <i class="fas fa-upload"></i>
+                                        Upload to get Prediction.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </form>
+
+                {% if prediction %}
+                <img src="{{img_path}}" height="320px" width="320px" class='border'>
+                {% else %}
+                <img src="static/img/placehold.jpg" height="320px" width="320px" class='border'>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}
